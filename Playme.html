@@ -5,22 +5,11 @@
    <meta charset="UTF-8">
    <title>Game</title>
    <script>
-/* 
-_____________________________________
-		   /            \
-		  /  Erik Klem   \
-		 /    Period 7    \
-         \ 				  /
-		  \			     /
-           \ 		    /
-____________\__________/____________   
-*/
-      
 	var canvas;
 	var c;
 	var midx,midy,cw,ch;
 	var pi = Math.PI;
-	var players = parseInt(prompt("Enter the number of players"));
+	var players;
 	var guy,guard;
 	var xL = 125,xR = xL;
 	var xpos = [250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1];
@@ -69,6 +58,10 @@ ____________\__________/____________
 			yL = midy;
 			yR = midy;
 			
+			do{
+				players = parseInt(prompt("Enter the number of players"));
+			}while(players != 1 && players != 2);
+		
 			guy = document.getElementById("guy");
 			guard = document.getElementById("guard");
 			
@@ -145,14 +138,6 @@ ____________\__________/____________
 			onePlayer();
 		else if(players == 2)
 			twoPlayers();
-		else{
-			c.beginPath();
-			c.textAlign = "center";
-			c.textBaseline = "middle";
-			c.strokeStyle = "red";
-			c.strokeText("You can't have that particular number of players.", midx,midy);
-			c.closePath();
-		}
 	}
 
 	/*
@@ -443,22 +428,32 @@ ____________\__________/____________
 	
 	function keystroke(key){
 		switch(key.keyCode){
+			if(lost != 1){
 			case 65: // Moves left LP
-				if(lost==1){
-				}else xL -= 10;
+				xL -= 10;
 				break;
 			case 68: // Moves right LP
-				if(lost==1){
-				}else xL += 10;
+				xL += 10;
+				break;
+			case 88: // Moves up LP
+				yL -= 10;
+				break;
+			case 83: // Moves down LP
+				yL += 10;
 				break;
 			case 37: // Moves left RP
-				if(lost==1){
-				}else xR -= 10;
+				xR -= 10;
 				break;
 			case 39: // Moves right RP
-				if(lost==1){
-				}else xR += 10;
+				xR += 10;
 				break;
+			case 38: // Moves up RP
+				yR -= 10;
+				break;
+			case 37: // Moves down LRP
+				yR += 10;
+				break;
+			}
 			case 82: // Resets
 				score = 0;
 				count = 0;
