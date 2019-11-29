@@ -92,7 +92,7 @@
 		c.fillText("score: " + score,0,0);
 		c.closePath();
 		
-	  // Draws buttons
+	  // Draws buttons for music
 		
 		if(players == 1){
 			x1 = 720;
@@ -138,6 +138,14 @@
 			onePlayer();
 		else if(players == 2)
 			twoPlayers();
+		
+		if(players == 1){
+			c.fillStyle = "yellow";
+			c.beginPath();
+			c.fillRect(500,400,50,50);
+			c.closePath();
+		}
+		
 	}
 
 	/*
