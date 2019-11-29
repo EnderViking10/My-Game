@@ -28,6 +28,7 @@
 	var p = 0, k = 0;
 	var x1;
 	var lost = 0;
+	var mobile = 0;
 	
     function initialize() {
         canvas = document.getElementById( "canvas" );
@@ -134,14 +135,24 @@
 		c.fillText("FS",x1 + 37,197);
 		c.closePath();
 		
+	  // Draws movement buttons
+		
 		if(players == 1){
-			c.fillStyle = "yellow";
-			c.beginPath();
-			c.fillRect(450,400,50,50);
-			c.fillRect(510,400,50,50);
-			c.fillRect(480,340,50,50);
-			c.fillRect(480,460,50,50);
-			c.closePath();
+			if(mobile != 1){
+				c.fillStyle = "black";
+				c.beginPath();
+				c.fillRect(480,250,50,50);
+				c.closePath();
+			}
+			else{
+				c.fillStyle = "black";
+				c.beginPath();
+				c.fillRect(450,400,50,50);
+				c.fillRect(510,400,50,50);
+				c.fillRect(480,340,50,50);
+				c.fillRect(480,460,50,50);
+				c.closePath();
+			}
 		}
 		
 		if(players == 1)
@@ -561,17 +572,39 @@
 		var myX = mouse.pageX - canvas.offsetLeft;
 		var myY = mouse.pageY - canvas.offsetTop;
 	
+	  // Plays seven nations army
 		if(myX > x1 && myX < x1 + 75 && myY > 5 && myY < 80){
 			if(p != 2){
 				music1.play();
 				p = 1;
 			}
 		}
+	  // Plays fortunate son
 		if(myX > x1 && myX < x1 + 75 && myY > 160 && myY < 235){
 			if(p != 1){
 				music2.play();
 				p = 2;
 			}
+		}
+	  // Adds mobile controls
+		if(myX > 480 && myX < 530 && myY > 240 && myY < 290){
+			mobile = 1;
+		}
+	  // Moves left
+		if(myX > 450 && myX < 500 && myY > 400 && myY < 450){
+			xL -= 10;
+		}
+	  // Moves right
+		if(myX > 510 && myX < 560 && myY > 400 && myY < 450){
+			xL += 10;
+		}
+	  // Moves up
+		if(myX > 480 && myX < 530 && myY > 340 && myY < 390){
+			yL -= 10;
+		}
+	  // Moves down
+		if(myX > 480 && myX < 530 && myY > 460 && myY < 510){
+			yL += 10;
 		}
 	}
    </script>
