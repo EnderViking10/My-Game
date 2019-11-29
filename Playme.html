@@ -134,18 +134,20 @@
 		c.fillText("FS",x1 + 37,197);
 		c.closePath();
 		
+		if(players == 1){
+			c.fillStyle = "yellow";
+			c.beginPath();
+			c.fillRect(450,400,50,50);
+			c.fillRect(510,400,50,50);
+			c.fillRect(480,340,50,50);
+			c.fillRect(480,460,50,50);
+			c.closePath();
+		}
+		
 		if(players == 1)
 			onePlayer();
 		else if(players == 2)
 			twoPlayers();
-		
-		if(players == 1){
-			c.fillStyle = "yellow";
-			c.beginPath();
-			c.fillRect(500,400,50,50);
-			c.closePath();
-		}
-		
 	}
 
 	/*
