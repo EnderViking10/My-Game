@@ -590,21 +590,23 @@
 		if(myX > 480 && myX < 530 && myY > 240 && myY < 290){
 			mobile = 1;
 		}
-	  // Moves left
-		if(myX > 450 && myX < 500 && myY > 400 && myY < 450){
-			xL -= 10;
-		}
-	  // Moves right
-		if(myX > 510 && myX < 560 && myY > 400 && myY < 450){
-			xL += 10;
-		}
-	  // Moves up
-		if(myX > 480 && myX < 530 && myY > 340 && myY < 390){
-			yL -= 10;
-		}
-	  // Moves down
-		if(myX > 480 && myX < 530 && myY > 460 && myY < 510){
-			yL += 10;
+		if(mobile == 1){
+		  // Moves left
+			if(myX > 450 && myX < 500 && myY > 400 && myY < 450){
+				xL -= 10;
+			}
+		  // Moves right
+			if(myX > 510 && myX < 560 && myY > 400 && myY < 450){
+				xL += 10;
+			}
+		  // Moves up
+			if(myX > 480 && myX < 530 && myY > 340 && myY < 390){
+				yL -= 10;
+			}
+		  // Moves down
+			if(myX > 480 && myX < 530 && myY > 460 && myY < 510){
+				yL += 10;
+			}
 		}
 	}
    </script>
