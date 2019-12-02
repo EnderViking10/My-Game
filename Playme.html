@@ -71,9 +71,11 @@
 	  
 	function drawScreen(e){
 		
-		if(k == 1)
+		if(k == 1){
+			gamePadUpdate();
 			buttonPress();
-		
+			axesMove();
+		}
 	  // Background
 	  
 		c.beginPath();
@@ -105,9 +107,6 @@
   
 	function onePlayer() {
 		
-		if(k == 1){
-			gamePadUpdate();
-		}
 	  // Draws "hitboxes"
 		if(xpos[0] < xL + 39 && xpos[0] + 39 > xL && ypos[0] < yL + 49 && ypos[0] + 49 > yL){
 			leftLost();
@@ -131,9 +130,6 @@
 		  
 	function twoPlayers() {
 		
-		if(k == 1){
-			gamePadUpdate();
-		}
 	  // Draws "hitboxes"
 		if(xpos[0] < xL + 39 && xpos[0] + 39 > xL && ypos[0] < yL + 49 && ypos[0] + 49 > yL){
 			leftLost();
@@ -169,8 +165,6 @@
   // Does left player
 	
 	function leftPlayer(){
-		
-		axesMove();
 		
 	  // Translates
 		c.save();
@@ -241,8 +235,6 @@
   // Does right player
 	
 	function rightPlayer(){
-		
-		axesMove();
 		
 	  // Translates
 		c.save();
@@ -345,8 +337,6 @@
 		
 		music1.pause();
 		music2.pause();
-		music1.currentTime = 0;
-		music2.currentTime = 0;
 		
 		lost = 1;
 	}
@@ -373,8 +363,6 @@
 		
 		music1.pause();
 		music2.pause();
-		music1.currentTime = 0;
-		music2.currentTime = 0;
 		
 		lost = 1;
 	}
@@ -438,36 +426,40 @@
 	}
 	
 	function buttonPress(){
-		if(buttons.length > 9){
-			if(buttons[9] == true){
-				reset();
+		if(lost != 1){
+			if(buttons.length > 9){
+				if(buttons[9] == true){
+					reset();
+				}
 			}
 		}
 	}
 	
 	function axesMove(){
-		if(axes.length > 0){
-			if(axes[0] > .05 || axes[0] < -.05){
-				scalexL = axes[0];
-				xL += scalexL*3;
+		if(lost != 1){
+			if(axes.length > 0){
+				if(axes[0] > .05 || axes[0] < -.05){
+					scalexL = axes[0];
+					xL += scalexL*3;
+				}
 			}
-		}
-		if(axes.length > 1){
-			if(axes[1] > .05 || axes[1] < -.05){
-				scaleyL = axes[1];
-				yL += scaleyL*3;
+			if(axes.length > 1){
+				if(axes[1] > .05 || axes[1] < -.05){
+					scaleyL = axes[1];
+					yL += scaleyL*3;
+				}
 			}
-		}
-		if(axes.length > 2){
-			if(axes[2] > .05 || axes[2] < -.05){
-				scalexR = axes[2]
-				xR += scalexR*3;
+			if(axes.length > 2){
+				if(axes[2] > .05 || axes[2] < -.05){
+					scalexR = axes[2]
+					xR += scalexR*3;
+				}
 			}
-		}
-		if(axes.length > 3){
-			if(axes[3] > .05 || axes[3] < -.05){
-				scaleyR = axes[3];
-				yR += scaleyR*3;
+			if(axes.length > 3){
+				if(axes[3] > .05 || axes[3] < -.05){
+					scaleyR = axes[3];
+					yR += scaleyR*3;
+				}
 			}
 		}
 	}
@@ -488,10 +480,14 @@
 		yL = midy;
 		xR = 125;
 		yR = yL;
-		if(p == 1)
+		if(p == 1){
 			music1.play();
-		if(p == 2)
+			music1.currentTime = 0;
+		}
+		if(p == 2){
 			music2.play();
+			music2.currentTime = 0;
+		}
 	}
 	
 	/*
