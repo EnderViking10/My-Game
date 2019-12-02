@@ -26,9 +26,8 @@
 	var music1,music2;
 	var hscore = 0;
 	var p = 0, k = 0;
-	var x1;
 	var lost = 0;
-	var mobile = 0;
+	var words = "";
 	
     function initialize() {
         canvas = document.getElementById( "canvas" );
@@ -91,48 +90,6 @@
 		c.textBaseline = "top";
 		c.fillStyle = "black";
 		c.fillText("score: " + score,0,0);
-		c.closePath();
-		
-	  // Draws buttons for music
-		
-		if(players == 1){
-			x1 = 720;
-		}
-		else{
-			x1 = 820;
-		}
-		
-		c.textAlign = "center";
-		c.textBaseline = "middle";
-		
-		// Start button
-		c.beginPath();
-		c.fillStyle = "lightgrey";
-		c.strokeStyle = "grey";
-		c.lineWidth = 5;
-		c.rect(x1,5,75,75);
-		c.fill();
-		c.stroke();
-		c.closePath();
-		
-		c.beginPath();
-		c.fillStyle = "black";
-		c.fillText("SNA",x1 + 37,37);
-		c.closePath();
-		
-		// Stop button
-		c.beginPath();
-		c.fillStyle = "lightgrey";
-		c.strokeStyle = "grey";
-		c.lineWidth = 5;
-		c.rect(x1,160,75,75);
-		c.fill();
-		c.stroke();
-		c.closePath();
-		
-		c.beginPath();
-		c.fillStyle = "black";
-		c.fillText("FS",x1 + 37,197);
 		c.closePath();
 		
 		if(players == 1)
@@ -515,30 +472,10 @@
 			}
 		}
 	}
-	
+	  
 	/*
-	Mouse input
+	Reset funciton
 	*/
-	
-	function mouseUp(mouse){
-		var myX = mouse.pageX - canvas.offsetLeft;
-		var myY = mouse.pageY - canvas.offsetTop;
-	
-	  // Plays seven nations army
-		if(myX > x1 && myX < x1 + 75 && myY > 5 && myY < 80){
-			if(p != 2){
-				music1.play();
-				p = 1;
-			}
-		}
-	  // Plays fortunate son
-		if(myX > x1 && myX < x1 + 75 && myY > 160 && myY < 235){
-			if(p != 1){
-				music2.play();
-				p = 2;
-			}
-		}
-	}
 	   
 	function reset(){
 		score = 0;
@@ -557,6 +494,24 @@
 		if(p == 2)
 			music2.play();
 	}
+	
+	/*
+	Music functions
+	*/
+  // Seven Nations Army
+	function sna(){
+		if(p != 2){
+			music1.play();
+			p = 1;
+		}
+	}
+  // Fortunate Son
+	function fs(){
+		if(p != 1){
+			music2.play();
+			p = 2;
+		}	
+	}
    </script>
 </head>
 
@@ -568,11 +523,8 @@
          Browser does NOT support HTML5 Canvas
       </canvas>
    </div>
-   <button onclick="xL -= 10">Left</button>
-   <button onclick="xL += 10">Right</button>
-   <button onclick="yL -= 10">Up</button>
-   <button onclick="yL += 10">Down</button>
-   <button onclick="reset()">Reset</button>
+   <button id="sna" onclick="sna()">Seven Nations Army</button>
+   <button id="fs" onclick="fs()">Fortuante Son</button>
    <audio id="music1" src="music.mp3"/>
    <audio id="music2" src="music2.mp3"/>
 </body>
