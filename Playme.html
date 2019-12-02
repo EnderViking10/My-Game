@@ -602,8 +602,7 @@
 			music1.play();
 		if(p == 2)
 			music2.play();
-	};
-
+	}
    </script>
 </head>
 
@@ -615,6 +614,10 @@
          Browser does NOT support HTML5 Canvas
       </canvas>
    </div>
+   <button onclick="xL -= 10">Left</button>
+   <button onclick="xL += 10">Right</button>
+   <button onclick="yL -= 10">Up</button>
+   <button onclick="yL += 10">Down</button>
    <audio id="music1" src="music.mp3"/>
    <audio id="music2" src="music2.mp3"/>
 </body>
