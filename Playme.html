@@ -195,19 +195,18 @@
 	  
 	  // Moves guards down
 		
-		ymove1 = score*.1
-		ymove2 = score*.05
+		ymove1 = score*.1;
+		ymove2 = score*.05;
 		
 		for(var i = 0; i < 3; i++){
 			if(score < 20)
 				ypos[i] += 2;
 			else if(score > 20 && score < 40){
-				ymove1 = score*.1
 				ypos[i] += ymove1
 			}else if(score > 40){
 				ymove2 = score*.05
 				if(ymove1 > ymove2){
-					ymove2 = ymove1 + score*.1
+					ymove2 = score*.1
 				}
 				ypos[i] += ymove2;
 			}
