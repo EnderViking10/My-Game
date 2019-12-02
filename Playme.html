@@ -151,6 +151,7 @@
 				c.fillRect(510,400,50,50);
 				c.fillRect(480,340,50,50);
 				c.fillRect(480,460,50,50);
+				c.fillRect(600,400,50,50);
 				c.closePath();
 			}
 		}
@@ -478,22 +479,7 @@
 		}
 		switch(key.keyCode){
 			case 82: // Resets
-				score = 0;
-				count = 0;
-				lost = 0;
-				xpos = [250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1];
-				ypos = [-150,-300,-450,-600];
-				x2pos = [250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1];
-				y2pos = [-150,-300,-450,-600];
-				xL = 150;
-				yL = midy;
-				xR = 150;
-				yR = midy;
-				if(p == 1)
-					music1.play();
-				if(p == 2)
-					music2.play();
-				break;
+				reset();
 			}		
 	}
 	
@@ -519,20 +505,7 @@
 	function buttonPress(){
 		if(buttons.length > 9){
 			if(buttons[9] == true){
-				score = 0;
-				count = 0;
-				xpos = [250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1];
-				ypos = [-150,-300,-450,-600];
-				x2pos = [250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1];
-				y2pos = [-150,-300,-450,-600];
-				xL = 150;
-				yL = midy;
-				xR = 150;
-				yR = midy;
-				if(p == 1)
-					music1.play();
-				if(p == 2)
-					music2.play();
+				reset();
 			}
 		}
 	}
@@ -607,8 +580,31 @@
 			if(myX > 480 && myX < 530 && myY > 460 && myY < 510){
 				yL += 10;
 			}
+			if(myX > 600 && myX < 650 && myY > 400 && myY < 450){
+				reset();
+			}
 		}
 	}
+	   
+	function reset(){
+		score = 0;
+		count = 0;
+		lost = 0;
+		xpos = [250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1];
+		ypos = [-150,-300,-450,-600];
+		x2pos = [250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1];
+		y2pos = [-150,-300,-450,-600];
+		xL = 150;
+		yL = midy;
+		xR = 150;
+		yR = midy;
+		if(p == 1)
+			music1.play();
+		if(p == 2)
+			music2.play();
+		break;
+	};
+
    </script>
 </head>
 
