@@ -332,6 +332,13 @@
 		if(players == 1){
 			if(score > hscore)
 				hscore = score;
+			if(hscore > 0){
+				c.beginPath();
+				c.fillStyle = "blue"
+				c.fillText("Amazing, you got into the top 10",midx,100);
+				c.fillText("Text your highscore to (607)-422-2492",midx,150);
+				c.closePath();
+			}
 			if(hscore > 85){
 				c.beginPath();
 				c.fillStyle = "blue"
