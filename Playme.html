@@ -194,14 +194,14 @@
 		c.drawImage(guard,xpos[3],ypos[3]);
 	  
 	  // Moves guards down
-		
-		ymove = score*.1;
-		
+
 		for(var i = 0; i < 3; i++){
 			if(score < 20)
 				ypos[i] += 2;
+			else if(score > 20 && score < 40)
+				ypos[i] += score*.1;
 			else
-				ypos[i] += ymove;
+				ypos[i] += score*.05
 		}
 		
 	  // Moves guards to top
@@ -332,7 +332,7 @@
 		if(players == 1){
 			if(score > hscore)
 				hscore = score;
-			if(hscore > 85){
+			if(hscore > 87){
 				c.beginPath();
 				c.fillStyle = "blue"
 				c.fillText("Good job. You beat the world record",midx,100);
