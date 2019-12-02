@@ -129,11 +129,11 @@
 	}
 	  	  
   // Does two players hitboxes
-		
-	   if(k == 1)
-			buttonPress();
 	   
 	function twoPlayers() {
+		
+		if(k == 1)
+			buttonPress();
 		
 	  // Draws "hitboxes"
 		if(xpos[0] < xL + 39 && xpos[0] + 39 > xL && ypos[0] < yL + 49 && ypos[0] + 49 > yL){
@@ -431,11 +431,9 @@
 	}
 	
 	function buttonPress(){
-		if(lost != 1){
-			if(buttons.length > 9){
-				if(buttons[9] == true){
-					reset();
-				}
+		if(buttons.length > 9){
+			if(buttons[9] == true){
+				reset();
 			}
 		}
 	}
@@ -498,6 +496,7 @@
 	/*
 	Music functions
 	*/
+	   
   // Seven Nations Army
 	function sna(){
 		if(p != 2){
