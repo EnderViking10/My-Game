@@ -71,9 +71,12 @@
 	  
 	function drawScreen(e){
 		
-		if(k == 1)
+		if(k == 1){
 			axesMove();
-
+			buttonPress();
+			gamePadUpdate();
+		}
+		
 	  // Background
 	  
 		c.beginPath();
@@ -105,11 +108,8 @@
   
 	function onePlayer() {
 		
-		if(k == 1){
-			buttonPress();
-			gamePadUpdate();
-		}
 	  // Draws "hitboxes"
+		
 		if(xpos[0] < xL + 39 && xpos[0] + 39 > xL && ypos[0] < yL + 49 && ypos[0] + 49 > yL){
 			leftLost();
 		}else if(xpos[1] < xL + 39 && xpos[1] + 39 > xL && ypos[1] < yL + 49 && ypos[1] + 49 > yL){
@@ -132,11 +132,8 @@
 	   
 	function twoPlayers() {
 		
-		if(k == 1){
-			buttonPress();
-			gamePadUpdate();
-		}
 	  // Draws "hitboxes"
+		
 		if(xpos[0] < xL + 39 && xpos[0] + 39 > xL && ypos[0] < yL + 49 && ypos[0] + 49 > yL){
 			leftLost();
 		}else if(xpos[1] < xL + 39 && xpos[1] + 39 > xL && ypos[1] < yL + 49 && ypos[1] + 49 > yL){
@@ -441,25 +438,7 @@
 	function buttonPress(){
 		if(buttons.length > 9){
 			if(buttons[9] == true){
-				score = 0;
-				count = 0;
-				lost = 0;
-				xpos = [250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1];
-				ypos = [0,-200,-400,-600];
-				x2pos = [250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1];
-				y2pos = [0,-200,-400,-600];
-				xL = 125;
-				yL = midy;
-				xR = 125;
-				yR = yL;
-				if(p == 1){
-					music1.play();
-					music1.currentTime = 0;
-				}
-				if(p == 2){
-					music2.play();
-					music2.currentTime = 0;
-				}
+				reset();
 			}
 		}
 	}
