@@ -71,10 +71,9 @@
 	  
 	function drawScreen(e){
 		
-		if(k == 1){
-			gamePadUpdate();
+		if(k == 1)
 			axesMove();
-		}
+
 	  // Background
 	  
 		c.beginPath();
@@ -106,9 +105,10 @@
   
 	function onePlayer() {
 		
-		if(k == 1)
+		if(k == 1){
 			buttonPress();
-		
+			gamePadUpdate();
+		}
 	  // Draws "hitboxes"
 		if(xpos[0] < xL + 39 && xpos[0] + 39 > xL && ypos[0] < yL + 49 && ypos[0] + 49 > yL){
 			leftLost();
@@ -132,9 +132,10 @@
 	   
 	function twoPlayers() {
 		
-		if(k == 1)
+		if(k == 1){
 			buttonPress();
-		
+			gamePadUpdate();
+		}
 	  // Draws "hitboxes"
 		if(xpos[0] < xL + 39 && xpos[0] + 39 > xL && ypos[0] < yL + 49 && ypos[0] + 49 > yL){
 			leftLost();
