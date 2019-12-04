@@ -328,9 +328,8 @@
 		c.fillText("Player 1 is a loser", midx,midy);
 		c.closePath();
 		if(players == 1){
-			if(score > hscore)
+			if(score > 95){
 				hscore = score;
-			if(hscore > 95){
 				c.beginPath();
 				c.fillStyle = "blue"
 				c.fillText("Good job. You beat the world record",midx,100);
