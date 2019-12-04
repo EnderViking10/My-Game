@@ -24,7 +24,7 @@
 	var yL,yR;
 	var score = 0,count = 0;
 	var music1,music2;
-	var hscore = 0;
+	var hscore = 95;
 	var p = 0, k = 0;
 	var lost = 0;
 	var words = "";
@@ -328,7 +328,7 @@
 		c.fillText("Player 1 is a loser", midx,midy);
 		c.closePath();
 		if(players == 1){
-			if(score > 95){
+			if(score > hscore){
 				hscore = score;
 				c.beginPath();
 				c.fillStyle = "blue"
