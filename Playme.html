@@ -121,7 +121,10 @@
 		}if(score > 95 && score < 100){
 			if(xL < 10 && yL < 10){
 				lost = 1;
-
+				c.beginPath();
+				c.fillStyle = "white";
+				c.fillRect(0,0);
+				c.closePath();
 			}
 		}
 		else{
@@ -316,11 +319,7 @@
   // Left loosing
 	
 	function leftLost(){
-		
-	  // Translates
-		c.save();
-		c.translate(100,0);
-		
+	
 	  // Draws stuff
 		
 		c.beginPath();
@@ -359,17 +358,11 @@
 		music2.pause();
 		
 		lost = 1;
-		
-		c.restore();
 	}
 	
   // Right loosing
 	
 	function rightLost(){
-		
-	  // Translate
-		c.save();
-		c.translate(500,0);
 		
 	  // Draws stuff
 		
@@ -391,8 +384,6 @@
 		music2.pause();
 		
 		lost = 1;
-		
-		c.restore();
 	}
 	
 	/*
