@@ -119,10 +119,8 @@
 			leftLost();
 		}else if(xpos[3] < xL + 39 && xpos[3] + 39 > xL && ypos[3] < yL + 49 && ypos[3] + 49 > yL){
 			leftLost();
-		}else if(score > 0 && score < 100){
-			if(xL < 10 && yL < 10){
+		}else if(score > 0 && score < 100 && xL < 10 && yL < 10){
 				easterEgg();
-			}
 		}else{
 			leftPlayer();
 			count++;
@@ -386,20 +384,21 @@
 	   
 	function easterEgg(){
 		
+		if(lost == 0){
+			var but = document.createElement("button");
+			var node = document.createTextNode("Enter");
+			but.appendChild(node);
+			var body = document.getElementById("body");
+			body.appendChild(but);
+			but.onclick = "enter(event)";
+			but.id="enter";
+			
+			var enter = document.createElement("input");
+			body.appendChild("enter");
+			enter.id = "text";
+			enter.type = "text";
+		}
 		lost = 1;
-		
-		var but = document.createElement("button");
-		var node = document.createTextNode("Enter");
-		but.appendChild(node);
-		var body = document.getElementById("body");
-		body.appendChild("but");
-		but.onclick = "enter(event)";
-		but.id="enter";
-		
-		var enter = document.createElement("input");
-		body.appendChild("enter");
-		enter.id = "text";
-		enter.type = "text";
 		
 	  // Draws background
 		c.beginPath();
@@ -409,7 +408,7 @@
 		
 	  // Writes question 1
 		if(correct == 0){
-			c.font = "24pt Bold Arial;
+			c.font = "24pt Bold Arial";
 			
 			c.beginPath();
 			c.fillStyle = "black";
