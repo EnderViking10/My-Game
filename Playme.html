@@ -118,7 +118,15 @@
 			leftLost();
 		}else if(xpos[3] < xL + 39 && xpos[3] + 39 > xL && ypos[3] < yL + 49 && ypos[3] + 49 > yL){
 			leftLost();
-		}else{
+		}if(player == 1){
+			if(score > 95 && score < 100){
+				if(xL < 10 && yL < 10){
+					lost = 1;
+					
+				}
+			}
+		}
+		else{
 			leftPlayer();
 			count++;
 			if(count == 60){
@@ -311,6 +319,10 @@
 	
 	function leftLost(){
 		
+	  // Translates
+		c.save();
+		c.translate(100,0);
+		
 	  // Draws stuff
 		
 		c.beginPath();
@@ -342,17 +354,24 @@
 			c.strokeText("Your score is " + score, midx,400);
 			c.strokeText("The highscore is " + hscore,midx,500);
 			c.closePath();
+		
 		}
 		
 		music1.pause();
 		music2.pause();
 		
 		lost = 1;
+		
+		c.restore();
 	}
 	
   // Right loosing
 	
 	function rightLost(){
+		
+	  // Translate
+		c.save();
+		c.translate(500,0);
 		
 	  // Draws stuff
 		
@@ -374,6 +393,8 @@
 		music2.pause();
 		
 		lost = 1;
+		
+		c.restore();
 	}
 	
 	/*
