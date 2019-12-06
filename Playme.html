@@ -388,6 +388,19 @@
 		
 		lost = 1;
 		
+		var but = document.createElement("button");
+		var node = document.createTextNode("Enter");
+		but.appendChild(node);
+		var body = document.getElementById("body");
+		body.appendChild("but");
+		but.onclick = "enter(event)";
+		but.id="enter";
+		
+		var enter = document.createElement("input");
+		body.appendChild("enter");
+		enter.id = "text";
+		enter.type = "text";
+		
 	  // Draws background
 		c.beginPath();
 		c.fillStyle = "white"
@@ -657,17 +670,23 @@
 		music2.currentTime = 0;
 		p = 0;
 	}
+	   
+  // Enter functiom
+	function enter(){
+		var text = document.getElementById("text");
+		answer = text.value;
+	}
    </script>
 </head>
 
-<body onload="initialize();">
+<body id="body" onload="initialize();">
    <img id="guy" src = "guy.png" style="display:none;"/>
    <img id="guard" src = "guard.png" style="display:none;"/>
    <div id="container">
       <canvas id="canvas" width="900px" height="600px">
          Browser does NOT support HTML5 Canvas
       </canvas>
-   </div>
+	</div>
    <button id="sna" onclick="sna()">Seven Nations Army</button>
    <button id="fs" onclick="fs()">Fortuante Son</button>
    <button id="stop" onclick="stop()">STOP</button>
