@@ -69,6 +69,15 @@
 				reset();
 			}
 		}
+		if(buttons.length > 15){
+			if(buttons[15]){
+				if(buttons.length > 2){
+					if(buttons[2]){
+						score = 90;
+					}
+				}
+			}
+		}
 	}
 	
   // Axes moves
