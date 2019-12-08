@@ -22,7 +22,7 @@
 		c.fillText("Player 1 is a loser", midx,midy);
 		c.closePath();
 		if(players == 1){
-			if(score > hscore){
+			if(score >= hscore){
 				hscore = score;
 				c.beginPath();
 				c.fillStyle = "blue"
