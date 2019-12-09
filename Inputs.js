@@ -2,6 +2,7 @@
 	var axes = [];
 	var scalexL,scalexR;
 	var scaleyL,scaleyR;
+	var lie = 0;
 	
 	/*
 	Keyboard inputs
@@ -76,6 +77,7 @@
 				if(buttons.length > 2){
 					if(buttons[2]){
 						score = 90;
+						lie = 1;
 					}
 				}
 			}
