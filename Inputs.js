@@ -81,12 +81,6 @@
 					}
 				}
 			}
-			if(buttons.length > 0){
-				if(buttons[0] == true){
-					xL*=2;
-					yL*=2;
-				}
-			}
 		}
 	}
 
