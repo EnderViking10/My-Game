@@ -3,7 +3,6 @@
 	var scalexL,scalexR;
 	var scaleyL,scaleyR;
 	var lie = 0;
-	var trig;
 	
 	/*
 	Keyboard inputs
