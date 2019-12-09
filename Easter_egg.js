@@ -128,4 +128,6 @@ function continu(){
 	question = 0;
 	correct = 0;
 	WRONG = 0;
+	
+	body.removeChild(text);
 }
