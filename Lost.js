@@ -23,12 +23,14 @@
 		c.closePath();
 		if(players == 1){
 			if(score >= hscore){
-				hscore = score;
-				c.beginPath();
-				c.fillStyle = "blue"
-				c.fillText("Good job. You beat the world record",midx,100);
-				c.fillText("Text your highscore to (607)-422-2492",midx,150);
-				c.closePath();
+				if(lie != 1){
+					hscore = score;
+					c.beginPath();
+					c.fillStyle = "blue"
+					c.fillText("Good job. You beat the world record",midx,100);
+					c.fillText("Text your highscore to (607)-422-2492",midx,150);
+					c.closePath();
+				}
 			}
 			
 			c.beginPath();
