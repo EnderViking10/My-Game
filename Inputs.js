@@ -65,8 +65,33 @@
 			}
 		}
 	}
+	
+  // Button presses
+	function buttonPress(){
+		if(buttons.length > 9){
+			if(buttons[9] == true){
+				reset();
+			}
+		}
+		if(buttons.length > 15){
+			if(buttons[15]){
+				if(buttons.length > 2){
+					if(buttons[2]){
+						score = 90;
+						lie = 1;
+					}
+				}
+			}
+			if(buttons.length > 0){
+				if(buttons[0] == true){
+					xL*=2;
+					yL*=2;
+				}
+			}
+		}
+	}
 
-  // Axes moves
+	  // Axes moves
 	function axesMove(){
 		if(lost != 1){
 			if(axes.length > 0){
@@ -95,32 +120,6 @@
 			}
 		}
 	}
-	
-  // Button presses
-	function buttonPress(){
-		if(buttons.length > 9){
-			if(buttons[9] == true){
-				reset();
-			}
-		}
-		if(buttons.length > 15){
-			if(buttons[15]){
-				if(buttons.length > 2){
-					if(buttons[2]){
-						score = 90;
-						lie = 1;
-					}
-				}
-			}
-			if(buttons.length > 0){
-				if(buttons[0] == true){
-					scalexL*=2;
-					scaleyL*=2;
-				}
-			}
-		}
-	}
-	
 	  
 	/*
 	Reset funciton
