@@ -36,11 +36,13 @@
 					break;
 			}
 		}
-		switch(key.keyCode){
-			case 82: // Resets
-				reset();
-				break;
-			}		
+		if(ee != 1){
+			switch(key.keyCode){
+				case 82: // Resets
+					reset();
+					break;
+			}
+		}
 	}
 	
 	/*
