@@ -2,6 +2,7 @@ var question = 0;
 var correct = 0;
 var answer;
 var WRONG = 0;
+var ee = 0;
 
 function easterEgg(){
 	
@@ -15,6 +16,7 @@ function easterEgg(){
 		body.appendChild(text);
 	}
 	lost = 1;
+	ee = 1;
 		
 	var text = document.getElementById("text");
 	answer = text.value;
