@@ -15,7 +15,7 @@ function onePlayer() {
 		leftLost();
 	}else if(xpos[3] < xL + 39 && xpos[3] + 39 > xL && ypos[3] < yL + 49 && ypos[3] + 49 > yL){
 		leftLost();
-	}else if(xL < 10 && yL < 10 && score > 95 && score < 100){
+	}else if(xL < 10 && yL < 10 && score > 20 && score < 100){
 		easterEgg();
 	}else{
 		leftPlayer();
