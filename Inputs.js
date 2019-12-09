@@ -82,11 +82,10 @@
 					}
 				}
 			}
-			if(buttons.length > 7){
-				if(buttons[7] > 0){
-					trig = buttons[7];
-					scalexL*=trig*2;
-					scaleyL*=trig*2;
+			if(buttons.length > 0){
+				if(buttons[0] == true){
+					scalexL*=2;
+					scaleyL*=2;
 				}
 			}
 		}
