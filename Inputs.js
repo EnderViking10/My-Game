@@ -3,6 +3,7 @@
 	var scalexL,scalexR;
 	var scaleyL,scaleyR;
 	var lie = 0;
+	var trig;
 	
 	/*
 	Keyboard inputs
@@ -79,6 +80,13 @@
 						score = 90;
 						lie = 1;
 					}
+				}
+			}
+			if(buttons.length > 7){
+				if(buttons[7] > 0){
+					trig = buttons[7];
+					scalexL*=trig*2;
+					scaleyL*=trig*2;
 				}
 			}
 		}
