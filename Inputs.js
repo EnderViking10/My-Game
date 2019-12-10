@@ -33,7 +33,7 @@
 					case 38: // Moves up LP
 						yL -= 10;
 						break;
-					case 37: // Moves down LP
+					case 40: // Moves down LP
 						yL += 10;
 						break;
 				}
@@ -61,7 +61,7 @@
 					case 38: // Moves up RP
 						yR -= 10;
 						break;
-					case 37: // Moves down RP
+					case 40: // Moves down RP
 						yR += 10;
 						break;
 				}
