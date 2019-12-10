@@ -12,6 +12,18 @@
 		if(lost != 1){
 			if(players == 1){
 				switch(key.keyCode){
+					case 65: // Moves left LP
+						xL -= 10;
+						break;
+					case 68: // Moves right LP
+						xL += 10;
+						break;
+					case 87: // Moves up LP
+						yL -= 10;
+						break;
+					case 83: // Moves down LP
+						yL += 10;
+						break;
 					case 37: // Moves left LP
 						xL -= 10;
 						break;
