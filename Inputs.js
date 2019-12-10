@@ -10,31 +10,49 @@
 	window.addEventListener("keydown", keystroke);
 	function keystroke(key){
 		if(lost != 1){
-			switch(key.keyCode){
-				case 65: // Moves left LP
-					xL -= 10;
-					break;
-				case 68: // Moves right LP
-					xL += 10;
-					break;
-				case 87: // Moves up LP
-					yL -= 10;
-					break;
-				case 83: // Moves down LP
-					yL += 10;
-					break;
-				case 37: // Moves left RP
-					xR -= 10;
-					break;
-				case 39: // Moves right RP
-					xR += 10;
-					break;
-				case 38: // Moves up RP
-					yR -= 10;
-					break;
-				case 37: // Moves down LRP
-					yR += 10;
-					break;
+			if(players == 1){
+				switch(key.keyCode){
+					case 37: // Moves left LP
+						xL -= 10;
+						break;
+					case 39: // Moves right LP
+						xL += 10;
+						break;
+					case 38: // Moves up LP
+						yL -= 10;
+						break;
+					case 37: // Moves down LP
+						yL += 10;
+						break;
+				}
+			}
+			if(players == 2){
+				switch(key.keyCode){
+					case 65: // Moves left LP
+						xL -= 10;
+						break;
+					case 68: // Moves right LP
+						xL += 10;
+						break;
+					case 87: // Moves up LP
+						yL -= 10;
+						break;
+					case 83: // Moves down LP
+						yL += 10;
+						break;
+					case 37: // Moves left RP
+						xR -= 10;
+						break;
+					case 39: // Moves right RP
+						xR += 10;
+						break;
+					case 38: // Moves up RP
+						yR -= 10;
+						break;
+					case 37: // Moves down RP
+						yR += 10;
+						break;
+				}
 			}
 		}
 		if(ee != 1){
