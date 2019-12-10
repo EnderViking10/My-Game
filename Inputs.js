@@ -152,6 +152,7 @@
 		score = 0;
 		count = 0;
 		lost = 0;
+lie = 0;
 		xpos = [250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1];
 		ypos = [0,-200,-400,-600];
 		x2pos = [250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1,250*Math.random() + 1];
