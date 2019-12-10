@@ -1,4 +1,4 @@
-	var hscore = 95;
+	var hscore = 103;
 	var lost = 0;
 	
   // Left loosing
