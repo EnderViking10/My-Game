@@ -34,10 +34,9 @@
 		
 	  // Draws guards
 		
-		c.drawImage(guard,xpos[0],ypos[0]);
-		c.drawImage(guard,xpos[1],ypos[1]);
-		c.drawImage(guard,xpos[2],ypos[2]);
-		c.drawImage(guard,xpos[3],ypos[3]);
+		for(let i=0; i<4; i++){
+			c.drawImage(guard,xpos[i],ypos[i]);
+		}
 	  
 	  // Moves guards down
 		
